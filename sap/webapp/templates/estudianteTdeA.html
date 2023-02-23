@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"> {% load static %}
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tendencias</title>
+
+    <link rel="stylesheet" href="{% static  'css/estilos.css'%}">
+<!-- CSS only -->
+
+</head>
+<body>
+
+
+
+<h1 style="background-color: #076633;">Bienvenido a la base de datos del TdeA</h1>
+<br>
+        <ul class="menu">
+            <li style=" display: block;padding: 15px 20px;color: black; text-decoration: none;}"><a href="https://www.tdea.edu.co/ " target="_blank">Estudiante</a></li>
+            <li style=" display: block;padding: 15px 20px;color: black; text-decoration: none;}"><a href="admin/" target="_blank">Administrador</a></li>
+
+
+        </ul>
+
+<table style="width:100%  ">
+    <thead style="text-align: left; background: #076633">
+        <tr style="cursor: pointer;">
+            <th style="padding: 20px 15px; font-weight: 700;text-transform: uppercase;">Id</th>
+            <th style="padding: 20px 15px; font-weight: 700;text-transform: uppercase;">Nombres</th>
+            <th style="padding: 20px 15px; font-weight: 700;text-transform: uppercase;">Apellidos</th>
+            <th style="padding: 20px 15px; font-weight: 700;text-transform: uppercase;">Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for persona in personas %}
+    <tr     >
+        <td style=" padding: 15px; border-bottom: solid 1px;">{{persona.id}}</td>
+        <td style=" padding: 15px; border-bottom: solid 1px;">{{persona.nombre}}</td>
+        <td style=" padding: 15px; border-bottom: solid 1px;">{{persona.apellido}}</td>
+        <td style=" padding: 15px; border-bottom: solid 1px;">{{persona.email}}</td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+</body>
+</html>
